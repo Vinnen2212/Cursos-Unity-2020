@@ -12,19 +12,13 @@ public class Target : MonoBehaviour
     float minImpulse = 12f;
     float maxImpulse = 16.5f;
     float torque = 15;
-    // Start is called before the first frame update
+  
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         RandomImpulseUp();
         RandomTorque();
         RandomSpawnPosition();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
    /// <summary>
