@@ -676,6 +676,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+--- !u!1 &2041573466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2041573468}
+  - component: {fileID: 2041573467}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2041573467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041573466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6546a842ab6eef42ac260cf1d6a331a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPrefab:
+  - {fileID: 4428042425128303537, guid: dc614caae2f6de64d996e85fe6faf728, type: 3}
+  - {fileID: 5470582062124829972, guid: b14ff9f7f9195574ebbf8617d8027170, type: 3}
+  - {fileID: 2840500944570578391, guid: 0b31e708ee3953e4c917660531ca5893, type: 3}
+  - {fileID: 7975561752575129587, guid: 05e80bc85e18b854bb0411247efca8c2, type: 3}
+  - {fileID: 3457048774577065430, guid: 3a9a9bf6e67ce1b4caed62888fab7548, type: 3}
+  waitTime: 1.5
+--- !u!4 &2041573468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041573466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7874692, y: 0.09491012, z: 1.8086866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2120347543
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,3 +819,4 @@ SceneRoots:
   - {fileID: 1829648831}
   - {fileID: 494445612}
   - {fileID: 1611319334}
+  - {fileID: 2041573468}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 553011498569246387}
   - component: {fileID: 8638747161506509544}
   - component: {fileID: 1784762623286158643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bad1
   m_TagString: Bad
   m_Icon: {fileID: 0}
@@ -168,4 +168,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c48bb55e0d4b4498b426f665a43d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulseForce: 12
