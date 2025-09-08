@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> targetPrefab;
     bool inGame = true;
-    public float waitTime = 1.5f;
+    float waitTime = 1f;
     // Start is called before the first frame update
     void Start()
     {

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Target : MonoBehaviour
 {
@@ -44,5 +46,18 @@ public class Target : MonoBehaviour
     void RandomSpawnPosition()
     {
         _rigidbody.transform.position = new Vector3(Random.Range(-xSpawnPosition, xSpawnPosition), ySpawnPosition, 0);
+    }
+    
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("KillZone"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
