@@ -14,13 +14,15 @@ public class Target : MonoBehaviour
     float minImpulse = 12f;
     float maxImpulse = 16.5f;
     float torque = 15;
-  
+    private GameManager gameManager;
+    public int pointsValue;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         RandomImpulseUp();
         RandomTorque();
         RandomSpawnPosition();
+        gameManager = FindObjectOfType <GameManager>();
     }
 
    /// <summary>
@@ -51,6 +53,9 @@ public class Target : MonoBehaviour
     private void OnMouseDown()
     {
         Destroy(gameObject);
+        
+            gameManager.UpdateScore(pointsValue);
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,6 +63,11 @@ public class Target : MonoBehaviour
         if (other.CompareTag("KillZone"))
         {
             Destroy(gameObject);
+        }
+
+        if (CompareTag("Good"))
+        {
+            gameManager.UpdateScore(-10);
         }
     }
 }
