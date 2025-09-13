@@ -16,6 +16,7 @@ public class Target : MonoBehaviour
     float torque = 15;
     private GameManager gameManager;
     public int pointsValue;
+    public ParticleSystem explosionParticle;
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -52,9 +53,13 @@ public class Target : MonoBehaviour
     
     private void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (GameManager.gameState == GameManager.GameState.inGame)
+        {
+            Destroy(gameObject);
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            gameManager.UpdateScore(pointsValue);  
+        }
         
-            gameManager.UpdateScore(pointsValue);
         
     }
 
@@ -67,7 +72,7 @@ public class Target : MonoBehaviour
 
         if (CompareTag("Good"))
         {
-            gameManager.UpdateScore(-10);
+            gameManager.GameOver();
         }
     }
 }
