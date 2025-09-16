@@ -51,16 +51,26 @@ public class Target : MonoBehaviour
         _rigidbody.transform.position = new Vector3(Random.Range(-xSpawnPosition, xSpawnPosition), ySpawnPosition, 0);
     }
     
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
         if (GameManager.gameState == GameManager.GameState.inGame)
         {
-            Destroy(gameObject);
-            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-            gameManager.UpdateScore(pointsValue);  
+            if (CompareTag("Bad"))
+            {
+                gameManager.GameOver();
+                Destroy(gameObject);
+                Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+                gameManager.UpdateScore(pointsValue);
+            }
+            else
+            {
+                Destroy(gameObject);
+                Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+                gameManager.UpdateScore(pointsValue);
+            }
         }
-        
-        
+
+
     }
 
     private void OnTriggerEnter(Collider other)
