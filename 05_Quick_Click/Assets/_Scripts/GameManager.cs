@@ -104,10 +104,14 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         lifes--;
-        Image heartImage = lifesList[lifes].GetComponent<Image>();
-        var tempColor = heartImage.color;
-        tempColor.a = 0.3f;
-        heartImage.color = tempColor;
+        if (lifes >= 0)
+        {
+            Image heartImage = lifesList[lifes].GetComponent<Image>();
+            var tempColor = heartImage.color;
+            tempColor.a = 0.3f;
+            heartImage.color = tempColor;
+        }
+
         if (lifes <= 0)
         {
             SetMaxScore();
@@ -115,6 +119,7 @@ public class GameManager : MonoBehaviour
             restartButton.gameObject.SetActive(true);
             gameState = GameState.gameOver;
         }
+        
     }
 
     public void RestartGame()
